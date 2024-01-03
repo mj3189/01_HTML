@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04_표 관련 태그</title>
+
+    <!--CSS(HTML 꾸미기)를 작성하는 태그  -->
+    <style>
+        .tb3{
+            border : 2px solid black; 
+        border-collapse: collapse;}
+    
+        .tb3 th, .tb3 td{
+            border : 1px solid black;
+        }
+        .tb3 thead{
+            background-color: yellowgreen;
+        }
+        .tb3 tbody{
+            background-color: yellow;
+        }
+        .tb3 tfoot{
+            background-color: rgb(83, 138, 221);
+            color : white;
+        }
+       
+    
+    </style>
+
+
+
+
+
+</head>
+<body>
+     <h1>표 관련 기본 태그</h1>
+     <h3>table(표) 태그</h3>
+     <pre>
+        -웹 문서에서 자료(데이터) 정리를 위해 사용하는 태그이다. 
+        -table 태그는 행, 열을 작성하기 위한 판을 나타낸다. 
+        <!-- 그 표에 줄 긋는 애들을 그리면 됨 -->
+     </pre>
+<h3>tr(Table Row)태그 </h3>
+<pre>
+    -테이블의 한 행을 나타내는 태그(가로)
+</pre>
+
+<h3>td(Table Data) 태그</h3>
+<pre>
+    -한 행의 한 컬럼(열)을 나타내는 태그(세로)
+    ==엑셀의 셀 하나
+</pre>
+<hr>
+<h4>테이블 연습1</h4>
+<table border="1" style="border-collapse: collapse;">
+<tr> <!-- 첫 행 1열부터 -->
+    <td>이름</td>
+    <td>나이</td>
+    <td>주소</td>
+</tr>
+<tr>
+    <td>이인경</td>
+    <td>25</td>
+    <td>서울</td>
+</tr>
+<tr>
+    <td>김미영</td>
+    <td>23</td>
+    <td>경기</td>
+</tr>
+</table>
+<hr>
+<h1>테이블 관련 추가 태그1</h1>
+<h3>th(table Header,테이블의 머리 표에 적는 내용의 타입을 굵게 쓰는 것) 태그 </h3>
+<pre>
+    -테이블의 제목 또는 내용을 강조할 때 사용하는 태그
+    -두꺼운 글씨, 가운데 정렬이 자동으로 적용된다. 
+</pre>
+<h3>caption 태그 </h3>
+<!-- 사진이나 표 밑에 각주다는 것 -->
+<pre>
+    -테이블에 대한 설명을 작성하는 태그
+</pre>
+
+<table border="1" style="border-collapse:collapse;">
+<caption>웹 브라우저 종류</caption>
+<!-- 행의 개수=가로칸의 개수=아파트 층 수, 열의 개수=세로칸의 개수 -->
+
+<tr>
+    <th>브라우저</th>
+    <th>제조사</th>
+    <th>홈페이지</th>
+</tr>
+<tr>
+    <td>크롬</td>
+    <td>구글</td>
+    <td><a href="https://www.google.com">https://www.google.com</a></td>
+</tr>
+<tr>
+    <td>엣지</td>
+    <td>MS</td>
+    <td><a href="https://www.microsoft.com">https://www.microsoft.com</a></td>
+</tr>
+<tr>
+    <td>웨일</td>
+    <td>네이버</td>
+    <td><a href="https://www.naver.com">https://www.naver.com</a></td>
+</tr>
+<tr>
+    <td>파이어폭스</td>
+    <td>Mozilla</td>
+    <td><a href="https://www.mozilla.org">https://www.mozilla.org</a></td>
+</tr>
+</table>
+<hr>
+<h1>테이블 관련 추가 태그2</h1>
+<pre>
+    [테이블 영역 지정 태그]
+    thead 태그: 테이블 상단 영역(컬럼 제목 작성 부분.. 타입)
+    tbody 태그: 테이블 중간 영역(내용, 값을 작성하는 부분)
+    tfoot 태그: 테이블 하단 영역(합계, 총합, 인원 수 등)
+
+    (*참고 사항)
+table 태그 내부를 thead, tbody, tfoot으로 나누지 않으면 모든 tr, td, th 태그는 tbody 내부에 작성된 것으로 취급한다
+</pre>
+
+<!-- class="tb3" == .tb3 같은 말임 -->
+<table class="tb3">
+    <thead>
+    
+        <tr>
+            <th>이름</th>
+            <th>나이</th>
+            <th>주소</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>홍길동</td>
+            <td>20</td>
+            <td>서울시 금천구</td>
+        </tr>
+        <tr>
+            <td>김개똥</td>
+            <td>25</td>
+            <td>서울시 강남구</td>
+        </tr>
+        <tr>
+            <td>김영희</td>
+            <td>23</td>
+            <td>경기도 파주시</td>
+        </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <th colspan="2">총 인원</th>
+        <th>3명</th>
+    </tr>
+    </tfoot>
+    
+</table>
+
+<hr><hr>
+<h1>행, 열 병합 속성 : rowspan, colspan</h1>
+<pre>
+
+    (병합이라는 의미보다 몇 칸을 차지할 것인지에 대한 의미로 해석)
+
+rowspan : 행을 몇 칸 차지할 것인지 (행 병합, 세로로 병합됨)
+colspan : 열을 몇 칸 차지할 것인지 (열 병합, 가로로 병합됨)
+
+<table border="1" style="border-collapse: collapse;>
+<tr>
+    <th colspan="3">1</th>
+    <th>2</th>
+    <th rowspan="3">3</th>
+    
+</tr>
+<tr>
+    <th>1</th>
+    <th colspan="3">2</th>
+    
+    
+</tr>
+<tr>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+    
+</tr>
+
+
+
+
+
+</table>
+
+
+</pre>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
